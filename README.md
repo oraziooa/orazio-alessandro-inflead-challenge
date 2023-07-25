@@ -7,7 +7,7 @@ This document presents two different exercises, each of them useful to evaluate 
 N.B. There is not right answer to the proposed questions, only personal and (hopefully) diverse approaches.
 The will to understand the context and to critically elaborate the specifications will be rewarded.
 
-## STUDY CASE: MARCO POLO HEAVY INDUSTRIES
+## Study case: Marco Polo Heavy Industries
 
 Marco Polo Heavy Industries (MPHI) manages a complex storage and shipping system of various building materials (DATA), sent from different mining sites spread around our solar system (SITE), gathered and refined to be sold.
 At the same time MPHI daily collects orders (concerning DATA) from the clients (USERS) that can be provided by contacting one or more SITEs.
@@ -43,9 +43,8 @@ Availability:
 
 Please note: Each site owns a special database (SITE DATA) to store materials' registry with it's own structure (AST1, AST2, AST3 share the same).
 
-### QUESTIONS
+### Questions
 
-#### DESIGN
 - Can you design this solution with scalability in mind? Give an example of high-level design, complete with project hyerarchy and mutual dependencies focusing mainly on the requirement "should be easy to handle new sites joining the system".
 
 - The application uses different external services (some of them act with SITEs, others with centralized processes). How whould you link them to the structure?
@@ -54,27 +53,24 @@ Please note: Each site owns a special database (SITE DATA) to store materials' r
 
 - Sometimes the database structure needs to be updated. Do you know any strategy to make this updates formal and safe? (e.g. O/RM migration)
 
-#### DATABASE
 - Would you use one or more database technology to handle all persistence cases? Like what?
 
 - Internally, MA groups Ir and Nk as "metals". A metal has two special traits: Malleability, Ductility. How whould you represent this fact designing the related database entities?
 
 - The database structure is SITE specific, although some entities can be shared among them. How would you choose to handle this entities?
 
-#### DEV OPS
 - Are you proficient in DevOps activities?
 
 - MPHI ecosystem is made up with many different applications, each one with its own cloud virtual server. We need to handle their life cicle in an automated fashion. What's your approach?
 
-### TEST-DRIVEN-DEVELOPMENT
 - Have you ever used Unit Test tools? What's your opinion about test-driven development?
 
-- How would you plan your Unit Test activities across the development processes?
+- How would you plan your Unit Test activities across the development processes? 
 
-### Coding Exercise
+## Coding Exercise
 
 You want to create a dotnet Core solution that allow, through a WebApi interface (MYAPI), to search users from a external Api (EXAPI) endpoint (payed per-call).
-- You can get data from (random-data)[https://random-data-api.com/api/users/random_user?size=10];
+- You can get data from [random-data](https://random-data-api.com/api/users/random_user?size=10);
 - You want to store the results in a local database (to serve from persistence if user exists);
 - Expose a search endpoint (that accept three filter strings: Gender, Email, Username)
 
